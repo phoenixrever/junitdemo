@@ -1,0 +1,46 @@
+# Maven
+/target/
+!target/.gitkeep
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+*.iml
+.idea/
+out/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# log files
+*.log
+
+# temporary files
+*.tmp
+*.temp
+
+# build output
+/build/
+
+# local env files
+*.env
+
+# generated files
+*.class
+
+# JetBrains
+*.iws
+
+# Code coverage
+*.coverage
+coverage/
