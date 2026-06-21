@@ -34,7 +34,11 @@ class MyClassTest2 {
   void setUp() {
     // myClass = new MyClass(fooService, barService, bazService); // 显式按构造参数顺序传
 
-    // 只需要修正这几个会被搞错的同 raw type 字段
+    // 同じ raw type (GenericService) が複数あるため、
+    // @InjectMocks の自動注入では型が区別できず誤った mock が入ることがある。
+    // そのため、該当フィールドのみ明示的に正しい mock を再設定している。
+
+    // ジェネリクスの型消去により @InjectMocks が誤注入するため、手動で修正
     ReflectionTestUtils.setField(myClass, "fooService", fooService);
     ReflectionTestUtils.setField(myClass, "barService", barService);
     ReflectionTestUtils.setField(myClass, "bazService", bazService);
